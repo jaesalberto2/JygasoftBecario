@@ -6,6 +6,7 @@ class Program
     {
         Console.WriteLine("¡Hola desde C#!");
 
+        Console.WriteLine("!Hola con conflicto");
         Console.WriteLine("Ingrese su nombre:");
         string nombre = Console.ReadLine();
         Console.WriteLine("¡Hola, " + nombre + "!");
