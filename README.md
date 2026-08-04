@@ -22,6 +22,8 @@ Qué es JSON:
 
 Es un formato de escritura para comunicarse entre sistemas generando un estándar, este formato permite la comunicación entre sistemas sin generar errores
 el tener un estándar permite tener reglas apropiadas al consultar o generar cambios en los sistemas, se adjunta un ejemplo de un texto en formato JSON para observar su estructura:
+
+
 {
   "nombre": "Juan Pérez",
   "edad": 30,
@@ -39,6 +41,8 @@ el tener un estándar permite tener reglas apropiadas al consultar o generar cam
   ],
   "fechaRegistro": "2024-06-15T14:30:00Z"
 }
+
+
 nótese que se compone de unas llaves principales para delimitar los elementos dentro del texto, los nombres de los atributos se encierran entre comillas y separan el valor
 del atributo con dos puntos, el valor del atributo también esta entre comillas y se separa del siguiente par de elementos con una coma, en caso de tener elementos múltiples
 se agregan llaves corchetes y llaves para insertar cada uno de los elementos en el atributo
