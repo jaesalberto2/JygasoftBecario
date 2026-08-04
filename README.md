@@ -6,6 +6,14 @@ Qué es HTTP:
 Es un protocolo de comunicación ampliamente utilizado para conectar dos o mas servidores permitiendo la navegación web mediante sitios web, este protocolo en palabras simples
 son un conjunto de reglas utilizadas para lograr la comunicación y permitiendo así crear sitios web, formularios, descargar imágenes, videos etc., es importante mencionar que el protocolo http es complementado habitualmente por una regla extra evolucionándolo a HTTPS incluyendo así una encriptación para que la información entre el emisor y el receptor no pueda ser interceptada por un tercero en el camino a su destino.
 
+Códigos de estado:
+200: Solicitud exitosa (OK). 
+201: Nuevo recurso creado (Created). 
+400: Petición incorrecta (Bad Request). 
+401: Autenticación requerida (Unauthorized). 
+404: Recurso no encontrado (Not Found). 
+500: Error del servidor (Internal Server Error).
+
 Qué es REST:
 
 Es un estilo para implementar la comunicación entre sistemas, para, por ejemplo actualizar o consultar una base de datos desde un sitio web, este estilo de comunicación 
