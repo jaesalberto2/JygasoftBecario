@@ -1,0 +1,19 @@
+<section class="card">
+  <h1>Acerca de la maqueta</h1>
+  <dl class="datos">
+    <dt>Proyecto</dt><dd>{{ vm.config.nombre }}</dd>
+    <dt>AngularJS</dt><dd>{{ vm.config.angularVersion }} (última versión de la rama 1.x)</dd>
+    <dt>Autor</dt><dd>{{ vm.config.autor }}</dd>
+    <dt>Dependencias</dt><dd>ngRoute, ngAnimate, ngSanitize — todas locales</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <h2>ngSanitize</h2>
+  <p ng-bind-html="vm.htmlSeguro"></p>
+</section>
+
+<section class="card">
+  <h2>Estructura de carpetas</h2>
+  <pre class="arbol">{{ vm.estructura.join('\n') }}</pre>
+</section>

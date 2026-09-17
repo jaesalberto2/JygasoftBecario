@@ -1,0 +1,37 @@
+<section class="card">
+  <h1>{{ vm.saludo() }}</h1>
+  <p class="muted">
+    Maqueta base de <strong>AngularJS {{ vm.config.angularVersion }}</strong>
+    ejecutándose completamente en local.
+  </p>
+
+  <label class="campo">
+    <span>Escriba su nombre (two-way binding)</span>
+    <input type="text" ng-model="vm.nombre" placeholder="Rolando">
+  </label>
+</section>
+
+<section class="grid-3">
+  <div class="tile">
+    <span class="tile__num">{{ vm.resumen.total }}</span>
+    <span class="tile__lbl">Tareas totales</span>
+  </div>
+  <div class="tile">
+    <span class="tile__num">{{ vm.resumen.pendientes }}</span>
+    <span class="tile__lbl">Pendientes</span>
+  </div>
+  <div class="tile">
+    <span class="tile__num">{{ vm.resumen.completadas }}</span>
+    <span class="tile__lbl">Completadas</span>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Qué incluye la maqueta</h2>
+  <ul class="lista-check">
+    <li ng-repeat="c in vm.caracteristicas" resaltar color="#eef4ff">
+      <strong>{{ c.titulo | capitalizar }}</strong> — {{ c.detalle }}
+    </li>
+  </ul>
+  <a class="btn" href="#!/tareas">Ir al ejemplo CRUD &rarr;</a>
+</section>

@@ -1,0 +1,13 @@
+{
+  "name": "maqueta-angularjs",
+  "version": "1.0.0",
+  "description": "Maqueta inicial de un proyecto AngularJS 1.8.3 con librerias servidas localmente",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes http-server -p 8080 -c-1 .",
+    "serve": "python3 -m http.server 8080"
+  },
+  "keywords": ["angularjs", "maqueta", "ngRoute"],
+  "author": "Jygasoft Code",
+  "license": "MIT"
+}

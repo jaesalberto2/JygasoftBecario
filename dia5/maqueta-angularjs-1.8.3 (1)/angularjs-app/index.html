@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myNinjaApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maqueta AngularJS 1.8.3</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <!-- Estilos locales -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+</head>
+<body>
+
+  <div ng-controller="ninjaController">
+      <p>{{message}}</p>
+  </div>
+
+
+
+  <!-- Barra de navegación -->
+  <div ng-include="'app/shared/navbar.html'"></div>
+
+  <!-- Contenedor donde se inyectan las vistas segun la ruta -->
+  <main class="container">
+    <div ng-view class="view-animada"></div>
+  </main>
+
+  <footer class="footer">
+    <span>Maqueta AngularJS {{ appVersion }} &middot; Jygasoft Code</span>
+  </footer>
+
+  <!-- ============ Librerías locales (vendor) ============ -->
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="vendor/angular/angular-route.min.js"></script>
+  <script src="vendor/angular/angular-animate.min.js"></script>
+  <script src="vendor/angular/angular-sanitize.min.js"></script>
+
+  <!-- ============ Aplicación ============ -->
+  <!-- Núcleo -->
+  <script src="app/app.module.js"></script>
+  <script src="app/app.config.js"></script>
+  <script src="app/app.run.js"></script>
+
+  <!-- Servicios / valores compartidos -->
+  <script src="app/core/config.value.js"></script>
+  <script src="app/core/tareas.service.js"></script>
+
+  <!-- Directivas / filtros -->
+  <script src="app/shared/resaltar.directive.js"></script>
+  <script src="app/shared/capitalizar.filter.js"></script>
+
+  <!-- Controladores -->
+  <script src="app/shared/navbar.controller.js"></script>
+  <script src="app/components/home/home.controller.js"></script>
+  <script src="app/components/tareas/tareas.controller.js"></script>
+  <script src="app/components/acerca/acerca.controller.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+[
+  { "id": 1, "titulo": "configurar el proyecto AngularJS",   "prioridad": "alta",  "completada": true  },
+  { "id": 2, "titulo": "definir las rutas con ngRoute",       "prioridad": "alta",  "completada": true  },
+  { "id": 3, "titulo": "crear el servicio de datos",          "prioridad": "media", "completada": false },
+  { "id": 4, "titulo": "maquetar la vista de tareas",         "prioridad": "media", "completada": false },
+  { "id": 5, "titulo": "escribir pruebas unitarias con Karma","prioridad": "baja",  "completada": false }
+]

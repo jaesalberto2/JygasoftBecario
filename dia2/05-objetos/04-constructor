@@ -1,0 +1,9 @@
+// id: 1, recuperarClave: function(){}
+function Usuario(){
+    //constructor
+    this.id = 1;
+    this.recuperarClave = function() {
+        // implementación del método
+    };
+
+}

@@ -1,0 +1,45 @@
+<section class="card">
+  <h1>Tareas</h1>
+  <p class="muted">CRUD en memoria: <code>ng-repeat</code>, <code>ng-model</code>, filtros y promesas.</p>
+
+  <form class="fila" ng-submit="vm.agregar()" novalidate>
+    <input type="text" ng-model="vm.nueva.titulo" placeholder="Nueva tarea...">
+    <select ng-model="vm.nueva.prioridad"
+            ng-options="p as (p | capitalizar) for p in vm.prioridades"></select>
+    <button class="btn" type="submit">Agregar</button>
+  </form>
+
+  <p class="error" ng-if="vm.error">{{ vm.error }}</p>
+
+  <label class="campo">
+    <span>Buscar</span>
+    <input type="text" ng-model="vm.filtro" placeholder="filtrar por texto...">
+  </label>
+</section>
+
+<section class="card">
+  <table class="tabla">
+    <thead>
+      <tr>
+        <th style="width:44px">✓</th>
+        <th><a href="" ng-click="vm.ordenarPor('titulo')">Título</a></th>
+        <th><a href="" ng-click="vm.ordenarPor('prioridad')">Prioridad</a></th>
+        <th style="width:90px">Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="t in vm.tareas | filter:vm.filtro | orderBy:vm.orden"
+          ng-class="{ 'hecha': t.completada }">
+        <td>
+          <input type="checkbox" ng-checked="t.completada" ng-click="vm.alternar(t)">
+        </td>
+        <td>{{ t.titulo | capitalizar }}</td>
+        <td><span class="chip chip--{{ t.prioridad }}">{{ t.prioridad }}</span></td>
+        <td><button class="btn btn--ghost" ng-click="vm.eliminar(t)">Borrar</button></td>
+      </tr>
+      <tr ng-if="(vm.tareas | filter:vm.filtro).length === 0">
+        <td colspan="4" class="muted center">Sin resultados.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

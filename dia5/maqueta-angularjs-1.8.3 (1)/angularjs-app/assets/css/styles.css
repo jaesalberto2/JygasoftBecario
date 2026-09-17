@@ -1,0 +1,246 @@
+/* ============================================================
+   styles.css — estilos de la maqueta (sin dependencias externas)
+   ============================================================ */
+
+:root {
+  --azul: #2f6feb;
+  --azul-osc: #1f4fb0;
+  --texto: #1f2430;
+  --suave: #6b7280;
+  --borde: #e5e7eb;
+  --fondo: #f6f7fb;
+  --blanco: #ffffff;
+  --alta: #e5484d;
+  --media: #f5a524;
+  --baja: #2eaf6f;
+  --radio: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+  line-height: 1.55;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: var(--blanco);
+  border-bottom: 1px solid var(--borde);
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.logo {
+  display: inline-grid;
+  place-items: center;
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: var(--azul);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.navbar__menu {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+
+.navbar__menu a {
+  display: block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: var(--suave);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.navbar__menu a:hover { background: #f1f3f9; color: var(--texto); }
+.navbar__menu a.is-active { background: #e8efff; color: var(--azul-osc); font-weight: 600; }
+
+.navbar__badge {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--suave);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.barra-carga {
+  position: absolute;
+  left: 0; bottom: -1px;
+  height: 2px; width: 100%;
+  background: linear-gradient(90deg, transparent, var(--azul), transparent);
+  animation: desliza 1s linear infinite;
+}
+
+@keyframes desliza {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+.card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 20px 22px;
+  margin-bottom: 18px;
+}
+
+h1 { font-size: 24px; margin: 0 0 6px; }
+h2 { font-size: 17px; margin: 0 0 12px; }
+.muted { color: var(--suave); font-size: 14px; }
+.center { text-align: center; }
+.error { color: var(--alta); font-size: 14px; margin: 8px 0 0; }
+
+/* ---------- Formularios ---------- */
+.campo { display: block; margin-top: 14px; }
+.campo > span { display: block; font-size: 13px; color: var(--suave); margin-bottom: 5px; }
+
+input[type="text"], select {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--blanco);
+}
+
+input[type="text"]:focus, select:focus {
+  outline: 2px solid #cddcff;
+  border-color: var(--azul);
+}
+
+.fila { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.fila input[type="text"] { flex: 1 1 220px; }
+.fila select { flex: 0 0 130px; }
+
+.btn {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--azul);
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover { background: var(--azul-osc); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--suave);
+  border: 1px solid var(--borde);
+}
+
+.btn--ghost:hover { background: #fdecec; color: var(--alta); border-color: #f6c9c9; }
+
+/* ---------- Tiles ---------- */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
+
+.tile {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 16px;
+  text-align: center;
+}
+
+.tile__num { display: block; font-size: 26px; font-weight: 700; color: var(--azul-osc); }
+.tile__lbl { font-size: 12px; color: var(--suave); }
+
+/* ---------- Listas y tablas ---------- */
+.lista-check { list-style: none; margin: 0 0 16px; padding: 0; }
+.lista-check li {
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background-color .15s ease;
+}
+
+.tabla { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tabla th, .tabla td { padding: 9px 8px; border-bottom: 1px solid var(--borde); text-align: left; }
+.tabla th { font-size: 12px; text-transform: uppercase; color: var(--suave); letter-spacing: .04em; }
+.tabla th a { color: inherit; text-decoration: none; }
+.tabla th a:hover { color: var(--azul); }
+.tabla tr.hecha td:nth-child(2) { text-decoration: line-through; color: var(--suave); }
+
+.chip {
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.chip--alta  { background: var(--alta); }
+.chip--media { background: var(--media); }
+.chip--baja  { background: var(--baja); }
+
+.datos { display: grid; grid-template-columns: 150px 1fr; gap: 6px 12px; margin: 0; font-size: 14px; }
+.datos dt { color: var(--suave); }
+.datos dd { margin: 0; }
+
+.arbol {
+  background: #10141c;
+  color: #d7dce5;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  overflow-x: auto;
+  margin: 0;
+}
+
+code { background: #f1f3f9; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--borde);
+  background: var(--blanco);
+  padding: 14px 24px;
+  font-size: 12px;
+  color: var(--suave);
+  text-align: center;
+}
+
+/* ---------- Animación de vistas (ngAnimate) ---------- */
+.view-animada.ng-enter { animation: entrar .25s ease both; }
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 640px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .datos  { grid-template-columns: 1fr; }
+  .navbar { flex-wrap: wrap; gap: 12px; }
+}

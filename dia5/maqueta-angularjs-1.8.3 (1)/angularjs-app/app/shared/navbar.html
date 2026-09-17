@@ -1,0 +1,17 @@
+<nav class="navbar" ng-controller="NavbarController as nav">
+  <div class="navbar__brand">
+    <span class="logo">ng</span>
+    <span>{{ nav.titulo }}</span>
+  </div>
+
+  <ul class="navbar__menu">
+    <li ng-repeat="item in nav.enlaces">
+      <a ng-href="#!{{ item.ruta }}"
+         ng-class="{ 'is-active': nav.esActiva(item.ruta) }">{{ item.etiqueta }}</a>
+    </li>
+  </ul>
+
+  <span class="navbar__badge">v{{ nav.version }}</span>
+
+  <div class="barra-carga" ng-show="cargando"></div>
+</nav>
